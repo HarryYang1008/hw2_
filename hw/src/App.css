@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap'); 
 :root {
   /* 
         FIRST WE'LL DEFINE OUR SWATCHES, i.e. THE COMPLEMENTARY
@@ -19,15 +20,16 @@ body {
 
 #root {
   background-color: var(--swatch-primary);
-  font-family: serif;
-  position: absolute;
-  width: 80%;
+  font-family:'Tangerine';
+  position: fixed;
+  width: 85%;
   left: 10%;
   height:90%;
   top: 5%;
   display:grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 10% 10% 70% 10%;
+  
 }
 
 /* 
@@ -88,7 +90,6 @@ body {
 #playlist-cards {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
-  display: flex;
   flex-direction: column;
   overflow: scroll;
   background-color: var(--swatch-accent);
@@ -108,14 +109,18 @@ body {
   float:left;
 }
 
-.list-card, .selected-list-card, .unselected-list-card {
-  font-size: 18pt;
+.list-card, 
+.selected-list-card, 
+.unselected-list-card,
+.playlister-song {
+  font-size: 24pt;
   margin: 10px;
   padding: 20px;
   border-radius: 25px;
 }
 
-.unselected-list-card:hover {
+.unselected-list-card:hover, 
+.playlister-song:hover{
   cursor: pointer;
   background-color: var(--swatch-contrast);
   color:white;
@@ -126,26 +131,30 @@ body {
   color: white;
 }
 
-.unselected-list-card {
+.unselected-list-card, 
+.playlister-song {
   background-color: var(--swatch-complement);
 }
 
-.list-card-button {
+.list-card-button, 
+.song-card-button {
   float:right;
   font-size:18pt;
 }
 
-.playlister-button, .playlister-button-disabled {
-  font-size:36pt;
-  border-width: 0px;
+
+.playlister-button, 
+.playlister-button-disabled {
+  font-size:25pt;
+  border-width: 50px;
   float:left;
-  color: black;
+  color: rgba(125, 41, 41, 0.528);
   cursor: pointer;
 }
 
 .playlister-button:hover {
   cursor: pointer;
-  color:black;
+  color:rgb(212, 18, 18);
 }
 
 .playlister-button-disabled {
@@ -154,10 +163,10 @@ body {
 }
 
 .playlister-song, .playlister-song-dragged-to { 
-  display:flex;
+  
   align-items: center;
-  font-size: 24pt;
-  height:20%;
+  font-size: 25pt;
+  
 }
 
 input {
@@ -190,6 +199,7 @@ input {
 }
 
 .modal-root {
+  width: 900px;
   position: relative;
   max-width: 1200vw;
   max-height: 600vh;
@@ -220,7 +230,7 @@ input {
   grid-template-columns: 30% 65%;
   grid-template-rows: 33% 33% 33%;
   gap: 10px 20px;
-  font-size: 48pt;
+  font-size: 40pt;
 }
 
 span {
@@ -254,32 +264,32 @@ span {
   font-size: 20pt;
 }
 
-#title-prompt {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-}
-
-#edit-song-modal-title-textfield {
+#title-textfield {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
 }
 
-#artist-prompt {
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
-}
-
-#edit-song-modal-artist-textfield {
+#artist-textfield {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
 
-#you-tube-id-prompt {
+#youtubeid-text {
   grid-column: 1 / 2;
   grid-row: 3 / 4;
 }
 
-#edit-song-modal-youTubeId-textfield {
+#title-text {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+#artist-text {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+#youTubeId-textfield {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
 }
